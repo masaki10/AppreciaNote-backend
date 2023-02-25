@@ -1,0 +1,30 @@
+@baseUrl = http://localhost:8080/api/v1
+
+### create user
+Post {{baseUrl}}/user/create HTTP/1.1
+content-type: application/json
+
+{
+    "name": "test",
+    "email": "test@example.com",
+    "password": "password"
+}
+
+### get all users
+GET {{baseUrl}}/user/all HTTP/1.1
+
+### get user by id
+GET {{baseUrl}}/user/1 HTTP/1.1
+
+### update user
+PUT {{baseUrl}}/user/update HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "name": "test2 update",
+    "email": "test2@example.com"
+}
+
+### delete user
+DELETE {{baseUrl}}/user/delete/3 HTTP/1.1
