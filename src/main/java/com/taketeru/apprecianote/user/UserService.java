@@ -14,7 +14,7 @@ public class UserService {
     }
 
     public User fetchUserById(Long id) {
-        return userRepository.findById(id).get();
+        return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
     }
 
     public User createUser(User user) {
