@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:8080/api/v1
+
+### create like
+Post {{baseUrl}}/like HTTP/1.1
+content-type: application/json
+
+{
+    "postId": 3,
+    "userInfo": "user2222"
+}
+
+### get likes
+GET {{baseUrl}}/like HTTP/1.1
+
+### delete like
+DELETE {{baseUrl}}/like/4 HTTP/1.1

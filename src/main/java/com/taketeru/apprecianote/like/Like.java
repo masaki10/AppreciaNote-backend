@@ -2,10 +2,9 @@ package com.taketeru.apprecianote.like;
 
 import com.taketeru.apprecianote.post.Post;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Data
 @Entity
@@ -14,6 +13,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table(name="likes")
 public class Like {
+    Like(String userInfo, Long postId) {
+        if (userInfo == null) throw new NullPointerException("userInfo is null!!!");
+        if (postId == null) throw new NullPointerException("postId is null");
+        this.userInfo = userInfo;
+        this.postId = postId;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,7 +27,9 @@ public class Like {
     @Column(nullable = false)
     private String userInfo;
 
-    @ManyToOne
-    @JoinColumn(name = "post_id")
-    public Post post;
+    @Column(nullable = false)
+    private Long postId;
+//    @ManyToOne
+//    @JoinColumn(name = "post_id", insertable=false, updatable=false, nullable = false)
+//    public Post post;
 }

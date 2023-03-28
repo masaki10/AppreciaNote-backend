@@ -11,6 +11,8 @@ public class PostService {
     PostRepository postRepository;
 
     public List<Post> fetchAllPosts(){
+        // paging
+//        Pageable limit = PageRequest.of(0, 10);
         return postRepository.findAll();
     }
 

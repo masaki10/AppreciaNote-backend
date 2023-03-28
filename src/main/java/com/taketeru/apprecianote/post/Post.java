@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class Post {
     @Column(nullable = false)
     private String userInfo;
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "postId", fetch=FetchType.LAZY, cascade = CascadeType.REMOVE)
+//    @Fetch(FetchMode.JOIN)
     private List<Like> likes;
 }

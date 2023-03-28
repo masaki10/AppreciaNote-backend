@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:8080/api/v1
+
+### create post
+Post {{baseUrl}}/post HTTP/1.1
+content-type: application/json
+
+{
+    "content": "test content. thank you",
+    "userInfo": "user1111"
+}
+
+### get posts
+GET {{baseUrl}}/post HTTP/1.1
+
+### delete post
+DELETE {{baseUrl}}/post/2 HTTP/1.1
