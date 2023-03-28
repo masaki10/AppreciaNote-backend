@@ -10,8 +10,28 @@ content-type: application/json
     "password": "password"
 }
 
+### register user
+Post {{baseUrl}}/auth/register HTTP/1.1
+content-type: application/json
+
+{
+    "name": "test-register",
+    "email": "test-register@example.com",
+    "password": "password"
+}
+
+### authenticate
+Post {{baseUrl}}/auth/authenticate HTTP/1.1
+content-type: application/json
+
+{
+    "email": "test-register@example.com",
+    "password": "password"
+}
+
 ### get all users
 GET {{baseUrl}}/user/all HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0LXJlZ2lzdGVyQGV4YW1wbGUuY29tIiwiaWF0IjoxNjc5Mzg5ODUzLCJleHAiOjE2NzkzOTEyOTN9.AMs2knBuT9GzpC-6XCheSYPiLLwG0okHzYKQdaeTnJI
 
 ### get user by id
 GET {{baseUrl}}/user/1 HTTP/1.1

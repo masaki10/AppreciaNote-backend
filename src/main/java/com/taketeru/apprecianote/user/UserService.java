@@ -1,7 +1,5 @@
-package com.taketeru.apprecianote.service;
+package com.taketeru.apprecianote.user;
 
-import com.taketeru.apprecianote.entity.User;
-import com.taketeru.apprecianote.repository.UserRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

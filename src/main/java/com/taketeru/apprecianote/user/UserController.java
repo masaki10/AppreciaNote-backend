@@ -1,7 +1,5 @@
-package com.taketeru.apprecianote.controller;
+package com.taketeru.apprecianote.user;
 
-import com.taketeru.apprecianote.service.UserService;
-import com.taketeru.apprecianote.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
